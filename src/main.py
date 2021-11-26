@@ -30,7 +30,7 @@ for i in word_list:
 # creates a dictionary where every letter that comes after another is tracked and given a frequency
 dict_freq = functions.letter_weighed_dict(word_list)
 
-# creates a dictionary where the letters that come after another letter is giving a chance
+# creates a dictionary where the letters that come after another letter is giving a probability
 dict_chance = functions.number_weighed_dict(dict_freq)
 
 # reads user input for how long the text should be, quits the program if the user provides "q" as input
