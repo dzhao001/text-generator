@@ -2,7 +2,7 @@
     File name: main.py
     Author: Daniel Zhao
     Date created: 11/24/2021
-    Date last modified: 11/24/2021
+    Date last modified: 11/27/2021
     Python Version: 3.8.12
 '''
 
@@ -10,7 +10,7 @@ import functions
 import os
 import sys
 
-# sets path as a destination string of desired text file
+# sets path as the destination string of desired text file
 path = os.path.join(os.getcwd(), "text", os.listdir("text")[0])
 
 # opens text file and reads it into a string
@@ -41,4 +41,5 @@ while (True):
     if (not user_input.isdigit()):
         print("Error: Incorrect input received")
         continue
-    print(functions.generate_text(dict_chance, unique_list, int(user_input)))
+    else:
+        print(functions.generate_text(dict_chance, unique_list, int(user_input)))

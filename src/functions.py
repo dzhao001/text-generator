@@ -2,7 +2,7 @@
     File name: functions.py
     Author: Daniel Zhao
     Date created: 11/24/2021
-    Date last modified: 11/24/2021
+    Date last modified: 11/27/2021
     Python Version: 3.8.12
 '''
 import random
@@ -13,7 +13,7 @@ word_file = open("wordlist.txt")
 word_list = word_file.read().split("\n")
 word_file.close()
 
-# this function takes a string seperated by spaces and turns it into a list of words, removing all symbols and numbers
+# this function takes a string seperated by spaces and returns a list of words, removing all symbols and numbers
 def string_to_list(a_string):
     word_list = a_string.split()
     completed_list = [re.sub('[^a-zA-Z]+', '', i).lower() for i in word_list]
@@ -98,9 +98,9 @@ def generate_word(letter, ref_dict, english_list):
                 str = formed_str
 
 # returns a list of words based on a starting letter, default amount of words generated is 10
-def generate_text(ref_dict, english_list, num_words = 10, letter = generate_letter()):
+def generate_text(ref_dict, english_list, num_words = 10):
     text_list = []
-    current_letter = letter
+    current_letter = generate_letter()
     i = 0
     while (i < num_words):
         word = generate_word(current_letter, ref_dict, english_list)
